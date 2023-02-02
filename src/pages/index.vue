@@ -3,17 +3,19 @@ defineOptions({
   name: 'IndexPage',
 })
 
-const name = $ref('')
+const thename = $ref('')
 
 const router = useRouter()
 const go = () => {
-  if (name)
-    router.push(`/hi/${encodeURIComponent(name)}`)
+  if (thename)
+    router.push(`/hi/${encodeURIComponent(thename)}`)
 }
 </script>
 
 <template>
   <div>
+    <SuperNavbar />
+    <SuperHero />
     <div i-carbon-campsite text-4xl inline-block />
     <p>
       <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
@@ -27,7 +29,7 @@ const go = () => {
     <div py-4 />
 
     <TheInput
-      v-model="name"
+      v-model="thename"
       placeholder="What's your name?"
       autocomplete="false"
       @keydown.enter="go"
@@ -36,7 +38,7 @@ const go = () => {
     <div>
       <button
         class="m-3 text-sm btn"
-        :disabled="!name"
+        :disabled="!thename"
         @click="go"
       >
         Go
