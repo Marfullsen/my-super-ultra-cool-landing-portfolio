@@ -5,7 +5,7 @@
   <nav>
     <div class="logo">
       <span>Marfullsen</span>
-      <span class="endingSign" text="white">;</span>
+      <span class="endingSign">;</span>
     </div>
   </nav>
 </template>
@@ -22,6 +22,10 @@ nav {
 }
 
 .endingSign {
-  /* font-size: 70px; */
+  color: white;
+}
+
+.endingSign.dark {
+  color: black;
 }
 </style>
